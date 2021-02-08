@@ -2,4 +2,4 @@
 
 https://cloudresumechallenge.dev/instructions/
 
-S3 hosted page is [here](http://mswann-dot-dev.s3-website-eu-west-1.amazonaws.com/)
+S3 hosted page is [here](http://mswann.dev.s3-website-eu-west-1.amazonaws.com/)
