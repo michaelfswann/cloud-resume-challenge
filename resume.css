@@ -37,7 +37,7 @@ div {
 }
 
 .left {
-  height: 1000px;
+  height: 100%;
   width: 45px;
   background-color: #e0eeee;
   float: left;
@@ -45,7 +45,7 @@ div {
 }
 
 .right {
-  height: 1000px;
+  height: 100%;
   width: 45px;
   background-color: #e0eeee;
   float: right;
@@ -58,8 +58,8 @@ div {
   display: inline-block;
   margin-top: 6px;
   margin-left: 55px;
-  width: 75%;
-  height: 1000px;
+  width: 85%;
+  height: 90%;
 }
 
 p,
