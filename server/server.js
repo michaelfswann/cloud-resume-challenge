@@ -14,7 +14,11 @@ app.use(cors());
 
 // Routes Definitions
 app.get("/", (req, res) => {
-  res.status(200).send("working");
+  res
+    .status(200)
+    .send(
+      "<h1>Cloud Resume Challenge</h1><br /><p></p>Express server is listening for requests...</p>"
+    );
 });
 
 // Server Activation
