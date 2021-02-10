@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res
     .status(200)
     .send(
-      "<h1>Cloud Resume Challenge</h1><br /><p></p>Express server is listening for requests...</p>"
+      "<h1>Cloud Resume Challenge</h1><p>Server is listening for requests...</p>"
     );
 });
 
