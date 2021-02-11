@@ -5,7 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config server.js"
+    "dev": "nodemon -r dotenv/config server.js",
+    "start": "node -r dotenv/config server.js",
+    "create-db": "node -r dotenv/config ./db/createCounterTable.js",
+    "delete-db": "cd db && node -r dotenv/config deleteCountersTable.js && cd ..",
+    "load-data": "cd db && node loadCounterData.js && cd ..",
+    "read-data": "cd db && node readDataTest.js && cd .."
   },
   "repository": {
     "type": "git",
@@ -14,6 +19,7 @@
   "author": "michaelfswann",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.841.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
