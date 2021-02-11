@@ -1,5 +1,7 @@
 body {
-  background-color: lightslategray;
+  background-color: rgb(216, 230, 243);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .page {
@@ -9,11 +11,11 @@ body {
 }
 
 .profile {
+  background-color: rgb(124, 165, 204);
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
-  border: 1px dashed black;
   width: 40%;
-
   margin: 5px;
   padding: 5px;
 }
@@ -28,36 +30,45 @@ body {
   padding: 5px;
 }
 
+#pic-of-me {
+  border-radius: 20px;
+}
+
 .statement {
-  border: 1px dashed black;
+  background-color: rgb(124, 165, 204);
+  border-radius: 20px;
   width: 40%;
   margin: 5px;
   padding: 5px;
 }
 
 .skills {
-  border: 1px dashed black;
+  background-color: rgb(124, 165, 204);
+  border-radius: 20px;
   width: 40%;
   margin: 5px;
   padding: 5px;
 }
 
 .experience {
-  border: 1px dashed black;
+  background-color: rgb(124, 165, 204);
+  border-radius: 20px;
   width: 40%;
   margin: 5px;
   padding: 5px;
 }
 
 .education {
-  border: 1px dashed black;
+  background-color: rgb(124, 165, 204);
+  border-radius: 20px;
   width: 40%;
   margin: 5px;
   padding: 5px;
 }
 
 .interests {
-  border: 1px dashed black;
+  background-color: rgb(124, 165, 204);
+  border-radius: 20px;
   width: 40%;
   margin: 5px;
   padding: 5px;
