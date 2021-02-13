@@ -10,7 +10,7 @@
     "create-db": "node -r dotenv/config ./db/createCounterTable.js",
     "delete-db": "cd db && node -r dotenv/config deleteCountersTable.js && cd ..",
     "load-data": "node -r dotenv/config ./db/populateCounterTable.js",
-    "read-data": "cd db && node readDataTest.js && cd .."
+    "read-data": "node -r dotenv/config ./db/readCounterTable.js"
   },
   "repository": {
     "type": "git",
