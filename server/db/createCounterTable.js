@@ -11,13 +11,21 @@ var ddb = new AWS.DynamoDB(APIVERSION);
 var params = {
   AttributeDefinitions: [
     {
-      AttributeName: "COUNTER_NAME",
+      AttributeName: "counterId",
       AttributeType: "S",
+    },
+    {
+      AttributeName: "counterNum",
+      AttributeType: "N",
     },
   ],
   KeySchema: [
     {
-      AttributeName: "COUNTER_NAME",
+      AttributeName: "counterId",
+      KeyType: "HASH",
+    },
+    {
+      AttributeName: "counterNum",
       KeyType: "RANGE",
     },
   ],
@@ -25,7 +33,7 @@ var params = {
     ReadCapacityUnits: 1,
     WriteCapacityUnits: 1,
   },
-  TableName: "COUNTER_LIST",
+  TableName: "counterTable",
   StreamSpecification: {
     StreamEnabled: false,
   },
