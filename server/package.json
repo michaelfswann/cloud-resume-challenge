@@ -9,7 +9,7 @@
     "start": "node -r dotenv/config server.js",
     "create-db": "node -r dotenv/config ./db/createCounterTable.js",
     "delete-db": "cd db && node -r dotenv/config deleteCountersTable.js && cd ..",
-    "load-data": "cd db && node loadCounterData.js && cd ..",
+    "load-data": "node -r dotenv/config ./db/populateCounterTable.js",
     "read-data": "cd db && node readDataTest.js && cd .."
   },
   "repository": {

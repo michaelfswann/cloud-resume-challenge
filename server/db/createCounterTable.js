@@ -15,7 +15,7 @@ var params = {
       AttributeType: "S",
     },
     {
-      AttributeName: "counterNum",
+      AttributeName: "counterValue",
       AttributeType: "N",
     },
   ],
@@ -25,7 +25,7 @@ var params = {
       KeyType: "HASH",
     },
     {
-      AttributeName: "counterNum",
+      AttributeName: "counterValue",
       KeyType: "RANGE",
     },
   ],
