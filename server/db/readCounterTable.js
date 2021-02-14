@@ -12,7 +12,6 @@ var params = {
   TableName: "counterTable",
   Key: {
     counterId: { S: "visitors" },
-    counterValue: { N: "36" },
   },
 };
 

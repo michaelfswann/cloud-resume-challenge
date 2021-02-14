@@ -14,19 +14,11 @@ var params = {
       AttributeName: "counterId",
       AttributeType: "S",
     },
-    {
-      AttributeName: "counterValue",
-      AttributeType: "N",
-    },
   ],
   KeySchema: [
     {
       AttributeName: "counterId",
       KeyType: "HASH",
-    },
-    {
-      AttributeName: "counterValue",
-      KeyType: "RANGE",
     },
   ],
   ProvisionedThroughput: {
