@@ -6,6 +6,8 @@ const cors = require("cors");
 // App Variables
 const app = express();
 const port = process.env.SERVER_PORT || "8000";
+const addToVisitorCounter = require("./db/models/updateAtomicCounter");
+const getCounter = require("./db/models/readCounter");
 
 //  App Configuration
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +21,17 @@ app.get("/", (req, res) => {
     .send(
       "<h1>Cloud Resume Challenge</h1><p>Server is listening for requests...</p>"
     );
+});
+
+app.get("/counter", async (req, res) => {
+  const data = await getCounter();
+  res.send(data);
+});
+
+app.get("/addToCounter", async (req, res) => {
+  const result = await addToVisitorCounter();
+  console.log(result);
+  res.status(200).json(result);
 });
 
 // Server Activation
