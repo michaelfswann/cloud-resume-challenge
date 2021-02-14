@@ -3,6 +3,15 @@ body {
   font-family: Tahoma, sans-serif;
 }
 
+p {
+  line-height: 1.7rem;
+  color: #2f2f2f;
+}
+h2 {
+  color: #517eff;
+  margin: 0;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -10,13 +19,27 @@ body {
 }
 
 .profile {
-  background-color: rgb(124, 165, 204);
-  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   width: 40%;
   margin: 5px;
-  padding: 5px;
+
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 11px solid #517eff;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 7px;
+  color: #517eff;
+}
+
+ul#contact-list {
+  padding: 0;
 }
 
 .contact {
@@ -30,47 +53,67 @@ body {
 }
 
 #pic-of-me {
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 .statement {
-  background-color: rgb(124, 165, 204);
-  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 11px solid #517eff;
+  border-radius: 8px;
+
   width: 40%;
   margin: 5px;
-  padding: 5px;
 }
 
 .skills {
-  background-color: rgb(124, 165, 204);
-  border-radius: 20px;
   width: 40%;
   margin: 5px;
-  padding: 5px;
+
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 11px solid #517eff;
+  border-radius: 8px;
 }
 
 .experience {
-  background-color: rgb(124, 165, 204);
-  border-radius: 20px;
   width: 40%;
   margin: 5px;
-  padding: 5px;
+
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 11px solid #517eff;
+  border-radius: 8px;
 }
 
 .education {
-  background-color: rgb(124, 165, 204);
-  border-radius: 20px;
   width: 40%;
   margin: 5px;
-  padding: 5px;
+
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 11px solid #517eff;
+  border-radius: 8px;
 }
 
 .interests {
-  background-color: rgb(124, 165, 204);
-  border-radius: 20px;
   width: 40%;
   margin: 5px;
-  padding: 5px;
+
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 11px solid #517eff;
+  border-radius: 8px;
 }
 #contact-list {
   list-style-type: none;
@@ -83,4 +126,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+h4.experience-date {
+  margin: 0;
+  font-weight: 500;
+  opacity: 0.5;
+}
+h4.experience-title {
+  margin: 10px 0;
 }
