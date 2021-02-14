@@ -6,7 +6,7 @@ const cors = require("cors");
 // App Variables
 const app = express();
 const port = process.env.SERVER_PORT || "8000";
-const addToVisitorCounter = require("./db/models/updateAtomicCounter");
+const incrementCounter = require("./db/models/incrementCounter");
 const getCounter = require("./db/models/readCounter");
 
 //  App Configuration
@@ -29,7 +29,7 @@ app.get("/counter", async (req, res) => {
 });
 
 app.get("/addToCounter", async (req, res) => {
-  const result = await addToVisitorCounter();
+  const result = incrementCounter();
   res.status(200).send(result);
 });
 

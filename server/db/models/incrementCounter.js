@@ -8,7 +8,7 @@ AWS.config.update({ region: REGION });
 // Create the DynamoDB document client
 const docClient = new AWS.DynamoDB.DocumentClient(APIVERSION);
 
-const addToVisitorCounter = (event, context, callback) => {
+const incrementCounter = (event, context, callback) => {
   const params = {
     TableName: "counterTable",
     Key: {
@@ -33,4 +33,4 @@ const addToVisitorCounter = (event, context, callback) => {
   });
 };
 
-module.exports = addToVisitorCounter;
+module.exports = incrementCounter;
