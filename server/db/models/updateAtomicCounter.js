@@ -1,15 +1,15 @@
 // Load the AWS SDK for Node.js
-var AWS = require("aws-sdk");
+const AWS = require("aws-sdk");
 // Set the region
 const { REGION, APIVERSION } = require("../config");
 
 AWS.config.update({ region: REGION });
 
-async function addToVisitorCounter() {
-  // Create the DynamoDB service object
-  var docClient = new AWS.DynamoDB.DocumentClient(APIVERSION);
+// Create the DynamoDB document client
+const docClient = new AWS.DynamoDB.DocumentClient(APIVERSION);
 
-  var params = {
+const addToVisitorCounter = (event, context, callback) => {
+  const params = {
     TableName: "counterTable",
     Key: {
       counterId: "visitors",
@@ -21,7 +21,7 @@ async function addToVisitorCounter() {
     ReturnValues: "UPDATED_NEW",
   };
 
-  const stuff = await docClient.update(params, function (err, data) {
+  docClient.update(params, function (err, data) {
     if (err) {
       console.log(
         "Unable to update: " + "\n" + JSON.stringify(err, undefined, 2)
@@ -30,9 +30,7 @@ async function addToVisitorCounter() {
       const result = JSON.stringify(data, undefined, 2);
       console.log("Increase Rating succeeded: " + "\n" + result);
     }
-    return data;
   });
-  return stuff;
-}
+};
 
 module.exports = addToVisitorCounter;

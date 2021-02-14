@@ -24,14 +24,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/counter", async (req, res) => {
-  const data = await getCounter();
-  res.send(data);
+  getCounter();
+  res.status(200);
 });
 
 app.get("/addToCounter", async (req, res) => {
   const result = await addToVisitorCounter();
-  console.log(result);
-  res.status(200).json(result);
+  res.status(200).send(result);
 });
 
 // Server Activation
