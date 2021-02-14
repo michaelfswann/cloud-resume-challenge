@@ -136,3 +136,15 @@ h4.experience-date {
 h4.experience-title {
   margin: 10px 0;
 }
+
+.sticky {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 15px;
+}
+
+#postman-badge {
+  margin-left: -35px;
+  margin-right: 35px;
+}
