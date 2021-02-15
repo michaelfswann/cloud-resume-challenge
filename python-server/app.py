@@ -68,7 +68,7 @@ def increment_counter(counter_id):
         ReturnValues="UPDATED_NEW"
     )
 
-    return jsonify({'success': 'visit counter icremented'}), 200
+    return jsonify({'success': 'visit counter incremented'}), 200
 
 
 @app.route("/counters", methods=["POST"])
