@@ -22,3 +22,5 @@ var/
 # NPM
 
 node_modules
+
+venv

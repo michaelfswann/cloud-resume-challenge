@@ -21,6 +21,7 @@ def hello():
 
 
 @app.route("/counters/<string:counter_id>")
+@cross_origin()
 def get_counter(counter_id):
 
     resp = client.get_item(
@@ -51,6 +52,7 @@ def get_counter(counter_id):
 
 
 @app.route("/counters/<string:counter_id>/increment")
+@cross_origin()
 def increment_counter(counter_id):
 
     resp = client.update_item(
@@ -72,6 +74,7 @@ def increment_counter(counter_id):
 
 
 @app.route("/counters", methods=["POST"])
+@cross_origin()
 def create_counter():
 
     counter_id = request.json.get('counterId')
