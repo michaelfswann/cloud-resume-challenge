@@ -42,7 +42,6 @@ fetch(
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     document.getElementById(
       "counter-text"
     ).innerText = `${data.visitors} Visitors and counting...`;
