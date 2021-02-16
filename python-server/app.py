@@ -1,12 +1,10 @@
 import os
-
-
 import boto3
-
-
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 
 
 COUNTERS_TABLE = os.environ['DYNAMODB_TABLE']
