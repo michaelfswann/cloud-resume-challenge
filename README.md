@@ -1,7 +1,6 @@
 # cloud-resume-challenge
 
-Cloud resume hosted here: [https://mswann.dev](mswann.dev)
-
+Cloud resume hosted here: [mswann.dev)(https://mswann.dev)
 This a repo contains my cv/website: something I created while completing a now defunct challenge as a learning experience.
 
 [Original challenge here...](https://cloudresumechallenge.dev/instructions/)
