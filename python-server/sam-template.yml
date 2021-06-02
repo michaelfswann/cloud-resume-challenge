@@ -1,0 +1,93 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'SAM template for Serverless framework service: '
+Resources:
+  countersTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: counterId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: counterId
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      TableName: cloud-resume-challenge-countersTable
+  CloudResumeChallengeDevApp:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: wsgi.handler
+      Runtime: python3.8
+      CodeUri: >-
+        /home/michael/code/cloud-resume-challenge/python-server/.serverless/cloud-resume-challenge.zip
+      MemorySize: 128
+      Timeout: 3
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - 'dynamodb:Query'
+                - 'dynamodb:Scan'
+                - 'dynamodb:GetItem'
+                - 'dynamodb:PutItem'
+                - 'dynamodb:UpdateItem'
+                - 'dynamodb:DeleteItem'
+              Resource: 'arn:aws:dynamodb:*:*:table/cloud-resume-challenge-countersTable'
+      Environment:
+        Variables:
+          DYNAMODB_TABLE: cloud-resume-challenge-countersTable
+      Events:
+        Event1:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY
+            RestApiId:
+              Ref: CloudResumeChallenge
+        Event2:
+          Type: Api
+          Properties:
+            Path: '/{proxy+}'
+            Method: ANY
+            RestApiId:
+              Ref: CloudResumeChallenge
+  CloudResumeChallenge:
+    Type: 'AWS::Serverless::Api'
+    Properties:
+      StageName: dev
+      DefinitionBody:
+        swagger: '2.0'
+        info:
+          title:
+            Ref: 'AWS::StackName'
+        paths:
+          /:
+            any:
+              x-amazon-apigateway-integration:
+                httpMethod: POST
+                type: aws_proxy
+                uri:
+                  'Fn::Sub': >-
+                    arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${CloudResumeChallengeDevApp.Arn}/invocations
+              responses: {}
+          '/{proxy+}':
+            any:
+              x-amazon-apigateway-integration:
+                httpMethod: POST
+                type: aws_proxy
+                uri:
+                  'Fn::Sub': >-
+                    arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${CloudResumeChallengeDevApp.Arn}/invocations
+              responses: {}
+  CloudResumeChallengeDevAppLambdaPermission:
+    Type: 'AWS::Lambda::Permission'
+    DependsOn:
+      - CloudResumeChallengeDevApp
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName:
+        Ref: CloudResumeChallengeDevApp
+      Principal: apigateway.amazonaws.com

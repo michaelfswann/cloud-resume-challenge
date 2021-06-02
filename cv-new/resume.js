@@ -2,7 +2,7 @@
 
 // increment counter
 fetch(
-  "https://02zp5lfdv5.execute-api.eu-west-1.amazonaws.com/dev/counters/visit%20counter/increment",
+  "https://nclzlrcvud.execute-api.eu-west-1.amazonaws.com/dev/counters/visitors/increment",
   {
     method: "GET", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
@@ -25,7 +25,7 @@ fetch(
 
 // read counter
 fetch(
-  "https://02zp5lfdv5.execute-api.eu-west-1.amazonaws.com/dev/counters/visit%20counter",
+  "https://nclzlrcvud.execute-api.eu-west-1.amazonaws.com/dev/counters/visitors",
   {
     method: "GET", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin

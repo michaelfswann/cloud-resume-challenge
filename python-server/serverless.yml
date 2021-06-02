@@ -16,6 +16,7 @@ service: cloud-resume-challenge
 plugins:
   - serverless-python-requirements
   - serverless-wsgi
+  - serverless-sam
 
 custom:
   wsgi:
